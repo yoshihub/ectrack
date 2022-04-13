@@ -46,14 +46,14 @@ class FormController extends Controller
 
 
         if ($validator->fails()) {
-            return redirect()->action('FormController@show')
+            return redirect()->action('App\Http\Controllers\FormController@show')
                 ->withInput()->withErrors($validator);
         }
 
 
         $request->session()->put('form_input', $input);
 
-        return redirect()->action('FormController@confirm');
+        return redirect()->action('App\Http\Controllers\FormController@confirm');
     }
 
     public function confirm(Request $request)
@@ -61,7 +61,7 @@ class FormController extends Controller
         $input = $request->session()->get('form_input');
 
         if (!$input) {
-            return redirect()->action('FormController@show');
+            return redirect()->action('App\Http\Controllers\FormController@show');
         }
 
         return view('form.confirm', ['input' => $input]);
@@ -72,12 +72,12 @@ class FormController extends Controller
         $input = $request->session()->get('form_input');
 
         if (!$input) {
-            return redirect()->action('FormController@show');
+            return redirect()->action('App\Http\Controllers\FormController@show');
         }
 
         $request->session()->forget('form_input');
 
-        return redirect()->action('FormController@complete');
+        return redirect()->action('App\Http\Controllers\FormController@complete');
     }
 
     public function complete()

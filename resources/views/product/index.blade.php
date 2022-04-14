@@ -26,6 +26,13 @@
       <div class="ageSearch">
         <form action="/product/search" method="post">
           @csrf
+          @if ($errors->any())
+	        <ul>
+	            @foreach ($errors->all() as $error)
+	                <li>{{ $error }}</li>
+	            @endforeach
+	        </ul>
+	        @endif
           <p>年式(西暦)</p>
           <input class="ageInput" type="number" name="bottom" value="{{isset($defaultBottom) ? $defaultBottom : ''}}">年〜
           <input class="ageInput" type="number" name="top" value="{{ isset($defaultTop) ? $defaultTop : '' }}">年

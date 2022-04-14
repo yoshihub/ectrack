@@ -23,9 +23,6 @@ class FormController extends Controller
     {
 
         $messages = [
-            'name.required' => '名前は入力して下さい',
-            'title.required' => '件名は入力して下さい',
-            'body.required' => '問い合わせ内容は入力して下さい',
             'name.string' => '文字で入力して下さい',
             'title.string' => '文字で入力して下さい',
             'body.string' => '文字で入力して下さい',

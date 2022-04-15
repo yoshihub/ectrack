@@ -22,24 +22,14 @@ class FormController extends Controller
     public function post(Request $request)
     {
 
-        $messages = [
-            'name.string' => '文字で入力して下さい',
-            'title.string' => '文字で入力して下さい',
-            'body.string' => '文字で入力して下さい',
-        ];
-
         $validate = [
-            'name' => 'required|string',
-            'title' => 'required|string',
-            'body' => 'required|string',
+            'name' => 'required|string|max:20',
+            'title' => 'required|string|max:20',
+            'body' => 'required|string|max:100',
         ];
 
 
-
-
-        $input = $request->only($this->formItems);
-
-        $validator = Validator::make($input, $validate, $messages);
+        $validator = Validator::make($request->all(), $validate);
 
 
         if ($validator->fails()) {

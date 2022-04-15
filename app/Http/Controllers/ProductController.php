@@ -28,8 +28,8 @@ class ProductController extends Controller
     public function search(Request $request)
     {
         $request->validate([
-        'bottom' => 'required|integer|min:4|max:4',
-        'top' => 'required|integer|min:4|max:4',
+        'bottom' => 'required|integer|digits:4',
+        'top' => 'required|integer|digits:4',
     ]);
 
         $products = Product::AgeBottom($request->bottom)->AgeTop($request->top)->get();

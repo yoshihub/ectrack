@@ -7,7 +7,7 @@
 @section('main')
 <h2 style="text-align:center;">確認画面</h2>
 
-<form class="toiForm" action="{{route('form.send')}}" method="post">
+<form class="toiForm" action="{{route('form.send')}}" method="post" style="text-align:center;">
   @csrf
   <label style="font-size:20px;">お名前</label>
   <div>

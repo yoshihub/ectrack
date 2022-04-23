@@ -21,6 +21,7 @@ class FormController extends Controller
 
     public function post(Request $request)
     {
+        $input = $request->only($this->formItems);
 
         $validate = [
             'name' => 'required|string|max:20',

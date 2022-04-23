@@ -40,9 +40,9 @@
   <form action="{{route('line.create')}}" method="POST">
     @csrf
     <input type="hidden" name="id" value="{{$product->id}}">
-    <button class="formButton" type="submit">気になる</button>
+    <button class="btn btn-outline-success" type="submit">気になる</button>
   </form>
-  <a class="formButton" href="{{route('form.show')}}">お問い合わせ</a>
+  <a class="btn btn-outline-primary mt-2" href="{{route('form.show')}}">お問い合わせ</a>
 </div>
 
 
